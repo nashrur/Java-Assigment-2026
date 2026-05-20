@@ -84,17 +84,18 @@ class Encoded implements Encodable {
     }
 
     // GENERATE SHIFT
-    // Contributed by Nashrur Aisyah Hani (102776)
-    // Derives a consistent group-specific shift value from the hardcoded
-    // groupID using Java's built-in hashCode() method.
-    // Math.abs() ensures non-negative value.
-    // (% 10) + 1 constrains result to range [1, 10].
-    // Same groupID always produces same groupShift — output is traceable.
+    // Contributed by Nashrur Aisyha Hani (102776)
+    // Generate shift value based on groupID
+    // Used to create a unique shift for encoding and decoding
+    // hashCode() converts groupID into a number
+    // Math.abs() makes sure it is positive
+    // % 10 + 1 keeps the result between 1 and 10
+    // Same groupID will always give the same shift value
     @Override
     public int generateShift() {
-        int groupShift = (Math.abs(groupID.hashCode()) % 10) + 1;
-        return groupShift;
-    }
+    int groupShift = (Math.abs(groupID.hashCode()) % 10) + 1;
+    return groupShift;
+     }
 
     // APPLY CIPHER
     // Contributed by Bong Ming Meng (103541)
