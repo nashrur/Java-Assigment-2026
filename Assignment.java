@@ -84,7 +84,7 @@ class Encoded implements Encodable {
     }
 
     // GENERATE SHIFT
-    // Contributed by Nashrur Aisyah Hani (102776)
+    // Contributed by Nashrur Aisyha Hani (102776)
     // Derives a consistent group-specific shift value from the hardcoded
     // groupID using Java's built-in hashCode() method.
     // Math.abs() ensures non-negative value.
